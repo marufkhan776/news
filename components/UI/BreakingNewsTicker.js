@@ -58,12 +58,6 @@ const BreakingNewsTicker = ({ breakingNews = [] }) => {
           </button>
         </div>
       </div>
-
-      <style jsx>{`
-        .pause-animation {
-          animation-play-state: paused;
-        }
-      `}</style>
     </div>
   );
 };

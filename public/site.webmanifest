@@ -1,0 +1,55 @@
+{
+  "name": "বাংলা নিউজ - Bangla News",
+  "short_name": "বাংলা নিউজ",
+  "description": "বাংলাদেশ ও বিশ্বের সর্বশেষ সংবাদ, রাজনীতি, খেলাধুলা, বিনোদন, ব্যবসা ও অর্থনীতির খবর",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "lang": "bn",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["news", "magazines", "productivity"],
+  "shortcuts": [
+    {
+      "name": "জাতীয় সংবাদ",
+      "short_name": "জাতীয়",
+      "description": "জাতীয় সংবাদ দেখুন",
+      "url": "/category/national",
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+    },
+    {
+      "name": "খেলার খবর",
+      "short_name": "খেলা",
+      "description": "খেলাধুলার সর্বশেষ খবর",
+      "url": "/category/sports",
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+    },
+    {
+      "name": "খবর খুঁজুন",
+      "short_name": "অনুসন্ধান",
+      "description": "সংবাদ অনুসন্ধান করুন",
+      "url": "/search",
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+    }
+  ]
+}

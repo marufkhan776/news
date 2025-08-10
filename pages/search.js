@@ -21,7 +21,7 @@ export default function SearchPage({ initialResults = [], initialQuery = '' }) {
       setHasSearched(true);
       performSearch(q);
     }
-  }, [router.query]);
+  }, [router.query.q]); // Only depend on the query parameter
 
   const performSearch = async (query) => {
     if (!query.trim()) return;

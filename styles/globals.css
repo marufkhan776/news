@@ -144,6 +144,11 @@
     animation: bounceIn 0.6s ease-out;
   }
 
+  /* Animation pause utility */
+  .pause-animation {
+    animation-play-state: paused !important;
+  }
+
   /* Custom scrollbar */
   .scrollbar-thin {
     scrollbar-width: thin;

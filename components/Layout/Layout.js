@@ -50,9 +50,7 @@ const Layout = ({
       "headline": article.title,
       "description": article.excerpt || description,
       "image": article.socialImage || article.mainImage ? [
-        `${process.env.NEXT_PUBLIC_SITE_URL || 'https://banglanews.com'}${
-          article.socialImage || article.mainImage
-        }`
+        urlFor(article.socialImage || article.mainImage).width(1200).height(630).url()
       ] : undefined,
       "datePublished": article.publishedAt,
       "dateModified": article._updatedAt || article.publishedAt,
@@ -132,13 +130,7 @@ const Layout = ({
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
-        {/* Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
+
 
         {/* Structured Data */}
         {article && (

@@ -11,27 +11,30 @@ const ARTICLES_PER_PAGE = 12;
 export default function CategoryPage({ 
   category, 
   articles: initialArticles = [], 
-  currentPage = 1, 
+  currentPage: initialCurrentPage = 1, 
   totalPages = 1,
   totalCount = 0
 }) {
   const [articles, setArticles] = useState(initialArticles);
+  const [currentPage, setCurrentPage] = useState(initialCurrentPage);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const loadPage = async (page) => {
-    if (page === currentPage) return;
+    if (page === currentPage || loading) return;
     
     setLoading(true);
     try {
+      // Update URL first
+      await router.push(`/category/${category.slug.current}?page=${page}`, undefined, { shallow: true });
+      
       const newArticles = await sanityFetch(
         QUERIES.articlesByCategory(category.slug.current, page - 1, ARTICLES_PER_PAGE)
       );
       
       if (newArticles) {
         setArticles(newArticles);
-        // Update URL without page reload
-        router.push(`/category/${category.slug.current}?page=${page}`, undefined, { shallow: true });
+        setCurrentPage(page);
       }
     } catch (error) {
       console.error('Error loading articles:', error);

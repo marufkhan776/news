@@ -1,11 +1,14 @@
 import '../styles/globals.css';
 import { ThemeProvider } from '../contexts/ThemeContext';
+import ErrorBoundary from '../components/UI/ErrorBoundary';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }
 

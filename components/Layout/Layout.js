@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import BreakingNewsTicker from '../UI/BreakingNewsTicker';
-import { sanityFetch, QUERIES } from '../../lib/sanity';
+import { sanityFetch, QUERIES, urlFor } from '../../lib/sanity';
 
 const Layout = ({ 
   children, 

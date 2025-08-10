@@ -21,16 +21,15 @@ export default function HomePage({
     setLoading(true);
     try {
       const currentArticles = categoriesData[categorySlug] || [];
-      const nextPage = Math.floor(currentArticles.length / 6);
+      const currentCount = currentArticles.length;
       const moreArticles = await sanityFetch(
-        QUERIES.latestByCategory(categorySlug, 6),
-        { page: nextPage }
+        QUERIES.latestByCategory(categorySlug, currentCount + 6)
       );
 
-      if (moreArticles?.length) {
+      if (moreArticles?.length > currentCount) {
         setCategoriesData(prev => ({
           ...prev,
-          [categorySlug]: [...currentArticles, ...moreArticles]
+          [categorySlug]: moreArticles
         }));
       }
     } catch (error) {
